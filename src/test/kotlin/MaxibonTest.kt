@@ -13,6 +13,7 @@ class MaxibonTest {
 
     @Test
     fun `check that there are 7 ice creams when Pedro takes ice creams`() {
+        testMaxibon.takeMaxibon("Pedro")
         assertEquals(testMaxibon.getMaxibons(), 7)
     }
 }
