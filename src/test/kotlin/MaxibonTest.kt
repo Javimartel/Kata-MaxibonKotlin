@@ -22,4 +22,10 @@ class MaxibonTest {
         testMaxibon.takeMaxibon("Fran")
         assertEquals(testMaxibon.getMaxibons(), 9)
     }
+
+    @Test
+    fun `check that there are 10 ice creams when Davide takes ice creams`() {
+        testMaxibon.takeMaxibon("Davide")
+        assertEquals(testMaxibon.getMaxibons(), 10)
+    }
 }
