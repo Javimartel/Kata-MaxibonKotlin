@@ -5,6 +5,9 @@ class Maxibon {
         if(developer === "Pedro") {
             this.maxibons -= 3
         }
+        if(developer === "Fran") {
+            this.maxibons -= 1
+        }
     }
 
     fun getMaxibons(): Int {
