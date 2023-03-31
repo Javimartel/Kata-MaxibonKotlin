@@ -12,4 +12,10 @@ class Maxibon {
     fun getMaxibons(): Int {
         return this.maxibons
     }
+
+    fun takeMaxibonInGroupOf(developers: List<String>) {
+        developers.forEach{
+            developer -> this.takeMaxibon(developer)
+        }
+    }
 }
