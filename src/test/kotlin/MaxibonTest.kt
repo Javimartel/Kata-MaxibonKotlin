@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test
 
 import org.junit.jupiter.api.Assertions.*
+import kotlin.test.assertFailsWith
 
 class MaxibonTest {
 
@@ -46,5 +47,17 @@ class MaxibonTest {
         val developers = listOf("Sergio", "Jorge")
         testMaxibon.takeMaxibonInGroupOf(developers)
         assertEquals(testMaxibon.getMaxibons(), 7)
+    }
+
+    @Test
+    fun `throw an Exception when ice creams are 2 and then there are 12`() {
+        val developers = listOf("Sergio", "Fran", "Jorge")
+        testMaxibon.takeMaxibonInGroupOf(developers)
+
+        val exception = assertFailsWith<MaxibonLimitException>(
+            block = { testMaxibon.takeMaxibonInGroupOf(developers) }
+        )
+        assertEquals(exception.message, "Hi guys, I'm Jorge. We need more maxibons!")
+        assertEquals(testMaxibon.getMaxibons(), 12)
     }
 }
