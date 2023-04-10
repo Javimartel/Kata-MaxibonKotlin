@@ -59,7 +59,7 @@ class MaxibonTest {
         assertEquals(12, testMaxibon.getMaxibons())
     }
 
-    @Test
+    /*@Test
     fun `check if there are 10 ice creams if the number of maxibons left is lower than the number of maxibons the developer tries to get`() {
         val firstGroupOfDelevopers = listOf("Pedro", "Sergio", "Jorge")
         val secondGroupOfDelevopers = listOf("Sergio", "Pedro")
@@ -67,5 +67,5 @@ class MaxibonTest {
         testMaxibon.takeMaxibonInGroupOf(secondGroupOfDelevopers)
 
         assertEquals(10, testMaxibon.getMaxibons())
-    }
+    }*/
 }

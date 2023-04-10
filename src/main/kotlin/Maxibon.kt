@@ -3,9 +3,9 @@ class Maxibon(private val slackAPI: SlackAPI) {
 
     fun takeMaxibon(developer: String) {
         when (developer) {
-            "Pedro" -> this.maxibons -= 3
-            "Fran", "Jorge" -> this.maxibons -= 1
-            "Sergio" -> this.maxibons -= 2
+            "Pedro" -> this.maxibons -= if (this.maxibons < 3) this.maxibons else 3
+            "Fran", "Jorge" -> this.maxibons -= if (this.maxibons < 1) this.maxibons else 1
+            "Sergio" -> this.maxibons -= if (this.maxibons < 2) this.maxibons else 2
         }
         checkAmountOfMaxibonsAfterTakenBy(developer)
     }
