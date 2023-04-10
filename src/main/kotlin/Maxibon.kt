@@ -29,5 +29,3 @@ class Maxibon(private val slackAPI: SlackAPI) {
         return this.slackAPI.getMessage()
     }
 }
-
-data class Developer(val name: String, val maxibonsToTake: Int) {}
