@@ -80,4 +80,10 @@ class MaxibonTest {
 
         assertEquals(10, testMaxibon.getMaxibons())
     }*/
+
+    @Test
+    fun `check that there are 20 ice creams when started`() {
+        val maxibon: Maxibon = Maxibon(slackRepository, 20)
+        assertEquals(20, maxibon.getMaxibons())
+    }
 }
