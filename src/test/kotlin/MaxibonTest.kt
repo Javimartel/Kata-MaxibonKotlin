@@ -92,4 +92,10 @@ class MaxibonTest {
         val maxibon = Maxibon(slackRepository, 2)
         assertEquals(12, maxibon.getMaxibons())
     }
+
+    @Test
+    fun `check that there are 10 ice creams when started with negative number`() {
+        val maxibon = Maxibon(slackRepository, -4)
+        assertEquals(10, maxibon.getMaxibons())
+    }
 }

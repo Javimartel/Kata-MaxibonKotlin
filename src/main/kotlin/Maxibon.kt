@@ -3,7 +3,9 @@ class Maxibon(private val slackAPI: SlackAPI, private var maxibons: Int = 10) {
     private val INCREMENT: Int = 10
 
     init {
-        this.maxibons = if (this.maxibons <= this.LIMIT) this.maxibons + this.INCREMENT else this.maxibons
+        this.maxibons =
+            if (this.maxibons <= this.LIMIT) this.maxibons + this.INCREMENT
+            else this.maxibons
     }
 
     fun takeMaxibon(developer: Developer) {
