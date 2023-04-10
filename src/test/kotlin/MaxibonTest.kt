@@ -9,44 +9,44 @@ class MaxibonTest {
 
     @Test
     fun `check that there are 10 ice creams when started`() {
-        assertEquals(testMaxibon.getMaxibons(), 10)
+        assertEquals(10, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 7 ice creams when Pedro takes ice creams`() {
         testMaxibon.takeMaxibon("Pedro")
-        assertEquals(testMaxibon.getMaxibons(), 7)
+        assertEquals(7, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 9 ice creams when Fran takes ice creams`() {
         testMaxibon.takeMaxibon("Fran")
-        assertEquals(testMaxibon.getMaxibons(), 9)
+        assertEquals(9, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 10 ice creams when Davide takes ice creams`() {
         testMaxibon.takeMaxibon("Davide")
-        assertEquals(testMaxibon.getMaxibons(), 10)
+        assertEquals(10, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 8 ice creams when Sergio takes ice creams`() {
         testMaxibon.takeMaxibon("Sergio")
-        assertEquals(testMaxibon.getMaxibons(), 8)
+        assertEquals(8, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 9 ice creams when Jorge takes ice creams`() {
         testMaxibon.takeMaxibon("Jorge")
-        assertEquals(testMaxibon.getMaxibons(), 9)
+        assertEquals(9, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 7 ice creams when Sergio and Jorge takes ice creams`() {
         val developers = listOf("Sergio", "Jorge")
         testMaxibon.takeMaxibonInGroupOf(developers)
-        assertEquals(testMaxibon.getMaxibons(), 7)
+        assertEquals(7, testMaxibon.getMaxibons())
     }
 
     @Test
@@ -55,8 +55,8 @@ class MaxibonTest {
         testMaxibon.takeMaxibonInGroupOf(developers)
         testMaxibon.takeMaxibonInGroupOf(developers)
 
-        assertEquals(testMaxibon.getAPIMessage(), "Hi guys, I'm Jorge. We need more maxibons!")
-        assertEquals(testMaxibon.getMaxibons(), 12)
+        assertEquals("Hi guys, I'm Jorge. We need more maxibons!", testMaxibon.getAPIMessage())
+        assertEquals(12, testMaxibon.getMaxibons())
     }
 
     @Test
@@ -66,6 +66,6 @@ class MaxibonTest {
         testMaxibon.takeMaxibonInGroupOf(firstGroupOfDelevopers)
         testMaxibon.takeMaxibonInGroupOf(secondGroupOfDelevopers)
 
-        assertEquals(testMaxibon.getMaxibons(), 10)
+        assertEquals(10, testMaxibon.getMaxibons())
     }
 }
