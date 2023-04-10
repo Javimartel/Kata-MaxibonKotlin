@@ -14,44 +14,56 @@ class MaxibonTest {
 
     @Test
     fun `check that there are 7 ice creams when Pedro takes ice creams`() {
-        testMaxibon.takeMaxibon("Pedro")
+        val developer = Developer("Pedro", 3)
+        testMaxibon.takeMaxibon(developer)
         assertEquals(7, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 9 ice creams when Fran takes ice creams`() {
-        testMaxibon.takeMaxibon("Fran")
+        val developer = Developer("Fran", 1)
+        testMaxibon.takeMaxibon(developer)
         assertEquals(9, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 10 ice creams when Davide takes ice creams`() {
-        testMaxibon.takeMaxibon("Davide")
+        val developer = Developer("Davide", 0)
+        testMaxibon.takeMaxibon(developer)
         assertEquals(10, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 8 ice creams when Sergio takes ice creams`() {
-        testMaxibon.takeMaxibon("Sergio")
+        val developer = Developer("Sergio", 2)
+        testMaxibon.takeMaxibon(developer)
         assertEquals(8, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 9 ice creams when Jorge takes ice creams`() {
-        testMaxibon.takeMaxibon("Jorge")
+        val developer = Developer("Jorge", 1)
+        testMaxibon.takeMaxibon(developer)
         assertEquals(9, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `check that there are 7 ice creams when Sergio and Jorge takes ice creams`() {
-        val developers = listOf("Sergio", "Jorge")
+        val developers = listOf(
+            Developer("Sergio", 2),
+            Developer("Jorge", 1)
+        )
         testMaxibon.takeMaxibonInGroupOf(developers)
         assertEquals(7, testMaxibon.getMaxibons())
     }
 
     @Test
     fun `send message with SlackAPI when ice creams are 2 and then there are 12`() {
-        val developers = listOf("Sergio", "Fran", "Jorge")
+        val developers = listOf(
+            Developer("Sergio", 2),
+            Developer("Fran", 1),
+            Developer("Jorge", 1)
+        )
         testMaxibon.takeMaxibonInGroupOf(developers)
         testMaxibon.takeMaxibonInGroupOf(developers)
 
